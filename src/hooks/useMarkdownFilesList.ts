@@ -12,7 +12,7 @@ const useMarkdownFilesList = () => {
       setError('');
 
       try {
-        const response = await fetch('https://api.github.com/repos/kimkimhun3/OptimusMarkDown/contents/');
+        const response = await fetch(import.meta.env.VITE_GITHUB_API_URL);
         if (!response.ok) {
           throw new Error('Failed to fetch markdown files');
         }

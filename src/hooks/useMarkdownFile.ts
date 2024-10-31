@@ -11,7 +11,7 @@ const useMarkdownFile = (fileName: string) => {
       setError('');
 
       try {
-        const response = await fetch(`https://raw.githubusercontent.com/kimkimhun3/OptimusMarkDown/main/${fileName}`);
+        const response = await fetch(`${import.meta.env.VITE_GITHUB_RAW_URL}${fileName}`);
         if (!response.ok) {
           throw new Error('Failed to fetch markdown file');
         }
